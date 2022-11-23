@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.project {
+    margin-top: 5rem;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.projectImage {
+    max-width: 38rem;
+}
+
+.projectTitle {
+    font-size: 3rem;
+    color: darkgray;
+    font-weight: 900;
+}
+
+.projectInformation {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.projectInformationParagraph {
+    max-width: 50ch;
+    color: white;
+    line-height: 1.7rem;
+    font-weight: 300;
+}
+
+.projectButton {
+    background-color: transparent;
+    cursor: pointer;
+    color: white;
+    border: 2px solid white;
+    border-radius: 0.2rem;
+    padding: 0.5rem 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.projectButton::after {
+    content: "View Demo";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    background-color: darkgray;
+    transition: 0.5s all ease-in-out;
+}
+
+.projectButton:hover.projectButton::after {
+    transform: translateX(100%);
+}

@@ -1,474 +1,142 @@
 ---
-	import Layout from '../layouts/Layout.astro';
-	import friends from "../assets/friendsFixed.png";
-	import Nav from "../components/Nav.astro";
-	import Project from '../components/Project.astro';
-	import AirBnB from "../assets/airBnBProject.png";
-	import Amazon from "../assets/AmazonClone.png";
-	import Weather from "../assets/WeatherApp.png";
-	import Alien from "../assets/AlienRestaurant.png";
-	import BusinessCard from "../assets/ReactBusinessCard.png";
-	import SignUp from "../assets/SignUpProject.png";
+import Introduction from "../components/Introduction/Introduction.jsx";
+import { Project } from "../components/Project/Project.jsx";
+import Footer from "../components/Footer/Footer.astro";
 
+import "../styles/global.css";
 
+/* Project 1 */
+const title1 = "Netflix Clone";
+import projectimg1 from "../assets/NetflixMockUp.png";
+const projectLink1 = "https://github.com/crypto-dot/Netflix-clone";
+const description1 =
+    "Netflix streaming clone. Adminstrators are able to view user analytics as well as perform CRUD operations on the database. Users can look up movies or series and have them sorted by genre. User and admin authentication is done use JWT's.";
 
-	const link1 = "https://crypto-dot.github.io/AirBnB_Clone/";
-	const link2 = "https://clone-e1507.web.app/";
-	const link3 = "https://crypto-dot.github.io/WeatherApp/";
-	const link4 = "https://crypto-dot.github.io/RestaurantPage/";
-	const link5 = "https://crypto-dot.github.io/ReactBusinessCard/";
-	const link6 = "https://crypto-dot.github.io/LoginPagePractice/";
+/* Project 2 */
+import projectimg2 from "../assets/AmazonCloneMockup.png";
+const description2 =
+    "Amazon e-commerce site clone. Users can buy and add items to their basket. Payment processing is done using stripe. Users can sign up and login using Firebase's auth API. ";
+const title2 = "Amazon Clone";
+const projectLink2 = "https://github.com/crypto-dot/amazon-clone";
 
+/* Project 3 */
+const description3 =
+    "Responsive landing page. BEM conventions for CSS. Semantic HTML. Accessibile Webpage.";
+const title3 = "Skilled Landing Page";
+const projectLink3 = "https://github.com/crypto-dot/FrontendMentorChallenge2";
+import projectimg3 from "../assets/skilledMockup.png";
+
+/* Project 4 */
+const description4 =
+    "Splice 3D animations. Simple landing page made using Splice's software that allows for simple, unique, and complex 3D animations.";
+const title4 = "Splice3D";
+const projectLink4 = "https://github.com/crypto-dot/Spline3D";
+import projectimg4 from "../assets/Spline3DMockup.png";
+
+/* Project 5 */
+const description5 =
+    "Weather Application. Uses a few different APIs to fetch users' weather. Openweather API is used for the actual weather data, while the other API's help retrieve the country and/or state code for more accurate results. GIPHY's API is used to fetch a gif displayed in the background that relates to the weather itself.";
+const title5 = "Weather Application";
+const projectLink5 = "https://github.com/crypto-dot/WeatherApp";
+import projectimg5 from "../assets/WeatherApplication.png";
+
+/* Project 6 */
+const description6 =
+    "Nice simple web based resume. This was my first project using React. Trying to learn how to create component-based web applications was the primary goal. ";
+const title6 = "Resume Application";
+const projectLink6 = "https://github.com/crypto-dot/ReactBusinessCard";
+import projectimg6 from "../assets/ResumeProjectMockup.png";
 ---
 
-<Layout title="Arbizu Portfolio Site">
-	<section>
-		<canvas id="mouseEffect"></canvas>
-		<Nav></Nav>
-		<div class="mainContainer">
-			<div class="lineDesign">
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Portfolio Site</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;900&display=swap"
+            rel="stylesheet"
+        />
+    </head>
 
-			</div>
-			<div class="hero">
-				<h1>Hello! I'm <span class="coloredText">Carlos</span></h1>
-				<p class="introText">I'm a fullstack software engineer who loves all aspects of web development.</p>
-				<button onclick="window.location.href='mailto:CarlosJobOffers@proton.me'" class="actionButton">Get in
-					Touch</button>
+    <body>
+        <main>
+            <Introduction client:load />
+            <h1>Here are some Projects</h1>
+            <section aria-label="projects" class="projects">
+                <Project
+                    projectImage={projectimg1}
+                    title={title1}
+                    description={description1}
+                    projectLink={projectLink1}
+                    client:visible
+                />
+                <Project
+                    projectImage={projectimg2}
+                    title={title2}
+                    description={description2}
+                    projectLink={projectLink2}
+                    client:visible
+                />
+                <Project
+                    projectImage={projectimg3}
+                    title={title3}
+                    description={description3}
+                    projectLink={projectLink3}
+                    client:visible
+                />
+                <Project
+                    projectImage={projectimg4}
+                    title={title4}
+                    description={description4}
+                    projectLink={projectLink4}
+                    client:visible
+                />
+                <Project
+                    projectImage={projectimg5}
+                    title={title5}
+                    description={description5}
+                    projectLink={projectLink5}
+                    client:visible
+                />
+                <Project
+                    projectImage={projectimg6}
+                    title={title6}
+                    description={description6}
+                    projectLink={projectLink6}
+                    client:visible
+                />
+            </section>
+            <Footer />
+        </main>
+    </body>
 
-			</div>
-			<img src={friends} />
-		</div>
-	</section>
-	<section id="about">
-		<div class="aboutContent">
-			<h1>About</h1>
-			<p>I’m a developer who has experience and practice with both frontend and backend technologies. In
-				my off time I love to walk my dog and listen to some music. Learning new technologies is my passion, so
-				feel free to reach out to me for any opportunities.</p>
-		</div>
-	</section>
-	<section id="projects">
-		<div class="projectContent">
-			<h1>Projects</h1>
-			<ul class="projects">
-				<Project ariaLabel="link to airbnb clone" alt="airbnb clone" link={link1} img={AirBnB} />
-				<Project ariaLabel="link to amazon clone" alt="amazon clone" link={link2} img={Amazon} />
-				<Project ariaLabel="link to weather app" alt="Weather app" link={link3} img={Weather} />
-			</ul>
-			<ul class="projects">
-				<Project ariaLabel="link to Alien project" alt="Alien project" link={link4} img={Alien} />
-				<Project ariaLabel="link to business card application" alt="Business app" link={link5}
-					img={BusinessCard} />
-				<Project ariaLabel="link to login page project" alt="Login Page" link={link6} img={SignUp} />
-			</ul>
-		</div>
-	</section>
-</Layout>
-<script>
-	const canvas = document.getElementById("mouseEffect");
-	const ctx = canvas.getContext('2d');
-	canvas.width = window.innerWidth;
-	canvas.height = window.innerHeight;
-	let particleArray = [];
-	const numberOfParticles = 125;
-	let lastScrolledLeft = 0;
-	let lastScrolledTop = 0;
+    <style>
+        body {
+            background-color: black;
+        }
 
-	const mouse = {
-		x: null,
-		y: null
-	}
-	window.addEventListener('mousemove', (e) => {
-		mouse.x = e.pageX;
-		mouse.y = e.pageY;
-	});
-	window.addEventListener("touchstart", (e) => {
-		mouse.x = e.touches[0].pageX;
-		mouse.y = e.touches[0].pageY;
-	});
-	window.addEventListener("touchend", (e) => {
-		mouse.x = undefined;
-		mouse.y = undefined;
-	});
-	window.addEventListener("touchmove", (e) => {
-		e.preventDefault();
-		mouse.x = e.touches[0].pageX;
-		mouse.y = e.touches[0].pageY;
-	});
-	window.addEventListener('mouseleave', () => {
-		mouse.x = undefined;
-		mouse.y = undefined;
-	});
-	window.onresize = (e) => {
-		canvas.width = window.innerWidth;
-		canvas.height = window.innerHeight;
-	}
-	document.addEventListener("scroll", () => {
-		let yPos = document.documentElement.scrollTop;
-		let xPos = document.documentElement.scrollLeft;
-		if (lastScrolledLeft != xPos) {
-			console.log(mouse.x - lastScrolledLeft);
-			mouse.x -= lastScrolledLeft;
-			lastScrolledLeft = xPos;
-			mouse.x += lastScrolledLeft;
-		}
-		if (lastScrolledTop != yPos) {
-			mouse.y -= lastScrolledTop;
-			lastScrolledTop = yPos;
-			mouse.y += lastScrolledTop;
-		}
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: "Lato", sans-serif;
+        }
+        h1 {
+            font-size: 10vw;
+            color: darkgrey;
+            padding-left: 1.5rem;
+        }
 
-	});
+        .project:nth-child(2n) {
+            flex-direction: row-reverse;
+        }
 
-	class Particle {
-		constructor(x, y, size, color, weight) {
-			this.x = x;
-			this.y = y;
-			this.size = size;
-			this.color = color;
-			this.weight = weight;
-		}
-		update() {
-			this.size -= 0.1;
-			if (this.size < 0) {
-				this.x = (mouse.x + ((Math.random() * 20) - 10));
-				this.y = (mouse.y + ((Math.random() * 20) - 10));
-				this.size = (Math.random() * 10) + 7;
-				this.weight = (Math.random() * 2) - 0.5;
-			}
-			this.y += this.weight;
-			this.weight += 0.05;
-
-			if (this.y > canvas.height - this.size) {
-				this.weight *= -0.2;
-			}
-		}
-	}
-	const init = () => {
-		particleArray = [];
-		for (let i = 0; i < numberOfParticles; i++) {
-			let x = Math.random() * canvas.width;
-			let y = Math.random() * canvas.height;
-			let size = (Math.random() * 10) + 7;
-			let color = `white`;
-			let weight = 1;
-			particleArray.push(new Particle(x, y, size, color, weight));
-		}
-	}
-
-	const connect = () => {
-		let opacityValue = 1;
-		for (let a = 0; a < particleArray.length; a++) {
-			for (let b = a; b < particleArray.length; b++) {
-				let distance =
-					(
-						(particleArray[a].x - particleArray[b].x) *
-						(particleArray[a].x - particleArray[b].x)
-					) +
-					(
-						(particleArray[a].y - particleArray[b].y) *
-						(particleArray[a].y - particleArray[b].y));
-				if (distance < 2800) {
-					opacityValue = 1 - (distance / 15000);
-					ctx.strokeStyle = `rgba(255,255,255,${opacityValue})`;
-
-					ctx.beginPath();
-					ctx.lineWidth = .5;
-					ctx.moveTo(particleArray[a].x, particleArray[a].y);
-					ctx.lineTo(particleArray[b].x, particleArray[b].y);
-					ctx.stroke();
-				}
-			}
-		}
-	}
-	const animate = () => {
-		ctx.clearRect(0, 0, canvas.width, canvas.height);
-		for (let i = 0; i < particleArray.length; i++) {
-			particleArray[i].update();
-			// particleArray[i].draw();
-		}
-		connect();
-		requestAnimationFrame(animate);
-	}
-	init();
-	animate();
-</script>
-
-<style>
-	* {
-		padding: 0;
-		margin: 0;
-	}
-
-	#mouseEffect {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		z-index: -10;
-	}
-
-
-	.projects {
-		display: flex;
-		gap: 0rem;
-	}
-
-	.projectContent {
-		padding-bottom: 10rem;
-	}
-
-	body {
-		margin: 0;
-		font-family: 'Sarabun', sans-serif;
-		background: var(--main-bg-color);
-		color: white;
-	}
-
-	.lineDesign {
-		display: flex;
-		align-items: flex-end;
-		position: absolute;
-		background: linear-gradient(to bottom, #EB21FC 0%, #46DCF0 105.48%);
-		width: 2px;
-		height: 36rem;
-		margin-top: 12rem;
-		margin-left: 4.5rem;
-	}
-
-	.gitLogoLineDesign {
-		position: relative;
-		top: 5rem;
-		left: -1rem;
-		;
-
-	}
-
-	.aboutContent,
-	.projectContent {
-		margin-left: 9rem;
-		margin-top: 10rem;
-	}
-
-	ul {
-		list-style: none;
-	}
-
-	.aboutContent h1::after,
-	.projectContent h1::after {
-		position: relative;
-		display: block;
-		top: 4rem;
-		height: 2px;
-		transform: rotate(0.02deg);
-		content: "";
-		width: 4.8ch;
-		background: var(--gradient);
-	}
-
-	.projectContent h1::after {
-		width: 6.5ch;
-	}
-
-	.aboutContent h1,
-	.projectContent h1 {
-		margin-bottom: 8rem;
-	}
-
-	.aboutContent p {
-		font-size: 1.8rem;
-		max-width: 28rem;
-		line-height: 4.5rem;
-	}
-
-	.mainContainer {
-		display: flex;
-	}
-
-	.mainContainer img {
-		margin-top: 25vh;
-		height: 50vw;
-	}
-
-	.actionButton {
-		font-size: 2rem;
-		font-weight: 300;
-		font-family: 'Sarabun', sans-serif;
-		color: white;
-		width: 16rem;
-		height: 4.5rem;
-		border-radius: .4rem;
-		border: 1px solid rgba(209, 209, 209, .5);
-		background-color: rgba(255, 255, 255, 0.1);
-		transition: .5s ease-in-out;
-	}
-
-	.actionButton:hover {
-		cursor: pointer;
-		transform: translateY(-10px);
-		background: var(--gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-clip: text;
-		text-fill-color: transparent;
-
-	}
-
-	.introText {
-		font-size: 2rem;
-		margin: 4rem 0rem;
-		font-weight: 200;
-		max-width: 460px;
-		line-height: 3.5rem;
-	}
-
-
-	.coloredText {
-		background: var(--gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-clip: text;
-		text-fill-color: transparent;
-	}
-
-
-
-	h1 {
-		font-size: 8rem;
-		color: white;
-		min-width: 7.6ch;
-		line-height: 90%;
-	}
-
-	.hero {
-		margin-left: 9rem;
-		margin-top: 11rem;
-	}
-
-
-	@media (min-width: 1500px) {
-		.mainContainer h1 {
-			font-size: 9rem;
-		}
-
-		.introText {
-			font-size: 2.5rem;
-			line-height: 4rem;
-		}
-
-		.aboutContent p {
-			font-size: 2rem;
-			max-width: none;
-			width: 30ch;
-		}
-
-		#mouseEffect {
-			width: 100vw;
-			height: 100vh;
-		}
-	}
-
-	@media (min-width: 1600px) {
-		.mainContainer h1 {
-			font-size: 10rem;
-		}
-	}
-
-	@media (min-width: 1700px) {
-		.mainContainer h1 {
-			font-size: 12rem;
-		}
-
-	}
-
-	@media (min-width: 1800px) {
-		.mainContainer h1 {
-			font-size: 14rem;
-		}
-
-	}
-
-	@media (min-width: 1900px) {
-		.mainContainer h1 {
-			font-size: 16rem;
-		}
-
-	}
-
-
-
-	@media (min-width:1300px) {
-		.mainContainer img {
-			margin-top: 10vh;
-		}
-	}
-
-	@media (max-width:1200px) {
-		.mainContainer img {
-			margin-top: 30vh;
-			height: 45vw;
-		}
-	}
-
-	@media (max-width:1000px) {
-		.lineDesign {
-			display: none;
-		}
-
-		.mainContainer h1 {
-			font-size: 6rem;
-		}
-
-		.aboutContent,
-		.projectContent,
-		.hero {
-			margin-left: 4rem;
-		}
-
-		.lineDesign {
-			margin-left: 2rem;
-			margin-top: 13rem;
-		}
-	}
-
-	@media (max-width:850px) {
-		.mainContainer img {
-			margin-top: 30vh;
-		}
-	}
-
-	@media (max-width:650px) {
-		.mainContainer img {
-			margin-top: 30vh;
-			height: 80vw;
-		}
-	}
-
-	@media (max-width:500px) {
-		.mainContainer img {
-			margin-top: 30vh;
-			height: 90vw;
-		}
-	}
-
-	@media (max-width: 400px) {
-		.mainContainer img {
-			margin-top: 40vh;
-			height: 100vw;
-		}
-	}
-
-	@media screen and (max-width: 300px) {
-
-		.aboutContent,
-		.projectContent {
-			margin-left: 1rem;
-		}
-
-		.aboutContent p {
-			max-width: none;
-			width: 20rem;
-		}
-	}
-</style>
+        header {
+            font-weight: 900;
+        }
+    </style>
+</html>

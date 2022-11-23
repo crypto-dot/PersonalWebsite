@@ -10,10 +10,8 @@
     "astro": "astro"
   },
   "devDependencies": {
-    "@astrojs/react": "^1.0.0",
-    "astro": "^1.0.6"
-  },
-  "dependencies": {
-    "@splinetool/runtime": "^0.9.100"
+    "@astrojs/preact": "^1.2.0",
+    "astro": "^1.0.6",
+    "preact": "^10.11.3"
   }
 }

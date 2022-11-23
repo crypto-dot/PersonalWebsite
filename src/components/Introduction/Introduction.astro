@@ -1,0 +1,90 @@
+---
+import person from "../../assets/person.png";
+---
+
+<html>
+    <section class="heroSectionIntroduction">
+        <header class="heroSectionIntroductionWrapper">
+            <h1 class="heroSectionHeading">Hi</h1>
+            <img
+                class="heroSectionImage"
+                aria-label="man holding stack of papers"
+                alt="man holding stack of papers"
+                src={person}
+            />
+        </header>
+    </section>
+    <section aria-label="name" class="heroSectionName">
+        <header>
+            <h1 class="heroSectionNameHeading">I'm Carlos</h1>
+        </header>
+    </section>
+    <section aria-label="primary job title" class="heroSectionJobTitle">
+        <header>
+            <h1 class="heroSectionNameHeading">Fullstack Dev</h1>
+        </header>
+    </section>
+    <section
+        aria-label="secondary job title"
+        class="heroSectionJobTitleSecondary"
+    >
+        <header>
+            <h1 class="heroSectionNameHeading">Designer</h1>
+        </header>
+    </section>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .heroSectionIntroductionWrapper,
+        .heroSectionName,
+        .heroSectionJobTitle,
+        .heroSectionJobTitleSecondary {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        .heroSectionIntroductionWrapper {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        .heroSectionHeading {
+            flex: 3;
+            font-size: 55vw;
+            color: darkgrey;
+            cursor: default;
+        }
+        .heroSectionIntroduction {
+            background-color: black;
+        }
+        img {
+            flex: 1;
+            display: inline-block;
+            height: 100%;
+        }
+        .heroSectionName {
+            display: flex;
+            align-items: center;
+            background-color: rgb(21, 32, 106);
+        }
+        .heroSectionNameHeading {
+            width: 100%;
+            cursor: default;
+            font-size: 10vw;
+            color: white;
+        }
+        .heroSectionJobTitle > header > .heroSectionNameHeading {
+            color: darkgray;
+        }
+        .heroSectionJobTitle {
+            background: black url("../../assets/bg1Cpy.png");
+        }
+        .heroSectionJobTitleSecondary {
+            background: rgb(21, 32, 106) url("../../assets/bg2.png");
+        }
+    </style>
+
+
+</html>
