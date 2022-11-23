@@ -54,3 +54,26 @@ img {
 .heroSectionJobTitleSecondary {
     background: rgb(21, 32, 106) url("../../assets/bg2.png");
 }
+
+@media (max-width:1225px) {
+    .heroSectionImage {
+        height: 70%;
+    }
+}
+
+@media (max-width:880px) {
+    .heroSectionHeading {
+        flex: 0;
+        font-size: 30vw;
+    }
+
+    .heroSectionImage {
+        object-fit: contain;
+        height: 50%;
+        flex: 0;
+    }
+
+    .heroSectionIntroductionWrapper {
+        justify-content: space-evenly;
+    }
+}

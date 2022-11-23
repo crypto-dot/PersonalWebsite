@@ -1,31 +1,45 @@
+---
+import githubLogo from "../../assets/GitHub-Mark-Light-64px.png";
+---
+
 <html>
     <footer
         aria-label="footer containing animation showing click me that leads to my github profile"
     >
-        <h1 class="footerHeading">Want to See All My Projects?</h1>
-        <div aria-label="months" class="dates">
-            <span>Jan</span>
-            <span>Feb</span>
-            <span>Mar</span>
-            <span>Apr</span>
-            <span>May</span>
-            <span>Jun</span>
-            <span>Jul</span>
-            <span>Aug</span>
-            <span>Sep</span>
-            <span>Oct</span>
-            <span>Nov</span>
-            <span>Dec</span>
-        </div>
-        <div class="githubContainer" aria-label="clickable github calendar">
-        </div>
-        <h1 class="footerHeading">On Github</h1>
+        <a class="a footer--a" href="https://github.com/crypto-dot">
+            <h1 class="footerHeading">Want to See All My Projects?</h1>
+            <div aria-label="months" class="dates">
+                <span>Jan</span>
+                <span>Feb</span>
+                <span>Mar</span>
+                <span>Apr</span>
+                <span>May</span>
+                <span>Jun</span>
+                <span>Jul</span>
+                <span>Aug</span>
+                <span>Sep</span>
+                <span>Oct</span>
+                <span>Nov</span>
+                <span>Dec</span>
+            </div>
+            <div class="githubContainer" aria-label="clickable github calendar">
+            </div>
+            <div class="githubSm">
+                <h1 class="githubSmHeader">Find Me</h1>
+                <img class="githubSmImg" src={githubLogo} />
+            </div>
+            <h1 class="footerHeading">On Github</h1>
+        </a>
     </footer>
 
     <style>
-        .footerHeading {
+        .footerHeading,
+        .githubSmHeader {
             font-size: 8vw;
             color: darkgray;
+        }
+        .githubSm {
+            display: none;
         }
         .githubContainer {
             width: 820px;
@@ -34,12 +48,28 @@
             gap: 5px;
         }
         footer {
+            margin-left: 1.5rem;
             width: 820px;
+            max-width: 100vw;
+        }
+        .footer--a {
+            text-decoration: none;
         }
         .dates {
             color: White;
             display: flex;
             justify-content: space-between;
+        }
+        @media (max-width: 880px) {
+            .dates,
+            .githubContainer {
+                display: none;
+            }
+            .githubSm {
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+                display: block;
+            }
         }
     </style>
     <script>
