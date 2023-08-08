@@ -2,23 +2,9 @@
 Animations for the github calender
 */
 
-.box {
-    width: 15px;
-    height: 15px;
-    background-color: #171c25;
-    border-radius: 2px;
-    cursor: pointer;
-    transition: 1.5s all ease;
+.primaryColor {
+    color: #393E46;
 }
-
-.active:nth-child(2n + 1) {
-    background-color: rgb(5, 135, 35);
+.secondaryColor{
+    color: #0C497E;
 }
-
-.githubContainer:hover .active:nth-child(2n) {
-    background-color: rgb(0, 90, 21);
-}
-
-/* .githubContainer:hover .active:nth-child(2n + 1) {
-    background-color: rgb(5, 135, 35);
-} */

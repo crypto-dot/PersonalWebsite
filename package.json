@@ -13,5 +13,8 @@
     "@astrojs/preact": "^1.2.0",
     "astro": "^1.0.6",
     "preact": "^10.11.3"
+  },
+  "dependencies": {
+    "micromodal": "^0.4.10"
   }
 }

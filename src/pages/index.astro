@@ -5,13 +5,6 @@ import Footer from "../components/Footer/Footer.astro";
 
 import "../styles/global.css";
 
-/* Project 1 */
-const title1 = "Netflix Clone";
-import projectimg1 from "../assets/NetflixMockUp.png";
-const projectLink1 = "https://github.com/crypto-dot/Netflix-clone";
-const description1 =
-    "Netflix streaming clone. Adminstrators are able to view user analytics as well as perform CRUD operations on the database. Users can look up movies or series and have them sorted by genre. User and admin authentication is done use JWT's.";
-
 /* Project 2 */
 import projectimg2 from "../assets/AmazonCloneMockup.png";
 const description2 =
@@ -33,19 +26,6 @@ const title4 = "Splice3D";
 const projectLink4 = "https://github.com/crypto-dot/Spline3D";
 import projectimg4 from "../assets/Spline3DMockup.png";
 
-/* Project 5 */
-const description5 =
-    "Weather Application. Uses a few different APIs to fetch users' weather. Openweather API is used for the actual weather data, while the other API's help retrieve the country and/or state code for more accurate results. GIPHY's API is used to fetch a gif displayed in the background that relates to the weather itself.";
-const title5 = "Weather Application";
-const projectLink5 = "https://github.com/crypto-dot/WeatherApp";
-import projectimg5 from "../assets/WeatherApplication.png";
-
-/* Project 6 */
-const description6 =
-    "Nice simple web based resume. This was my first project using React. Trying to learn how to create component-based web applications was the primary goal. ";
-const title6 = "Resume Application";
-const projectLink6 = "https://github.com/crypto-dot/ReactBusinessCard";
-import projectimg6 from "../assets/ResumeProjectMockup.png";
 ---
 
 <!DOCTYPE html>
@@ -66,15 +46,8 @@ import projectimg6 from "../assets/ResumeProjectMockup.png";
     <body>
         <main>
             <Introduction client:load />
-            <h1>Here are some Projects</h1>
-            <section aria-label="projects" class="projects">
-                <Project
-                    projectImage={projectimg1}
-                    title={title1}
-                    description={description1}
-                    projectLink={projectLink1}
-                    client:visible
-                />
+            <div class="projects">
+
                 <Project
                     projectImage={projectimg2}
                     title={title2}
@@ -94,20 +67,6 @@ import projectimg6 from "../assets/ResumeProjectMockup.png";
                     title={title4}
                     description={description4}
                     projectLink={projectLink4}
-                    client:visible
-                />
-                <Project
-                    projectImage={projectimg5}
-                    title={title5}
-                    description={description5}
-                    projectLink={projectLink5}
-                    client:visible
-                />
-                <Project
-                    projectImage={projectimg6}
-                    title={title6}
-                    description={description6}
-                    projectLink={projectLink6}
                     client:visible
                 />
             </section>
