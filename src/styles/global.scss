@@ -1,0 +1,56 @@
+$primaryFont: 'BioRhyme', 'Times New Roman', Times, serif;
+$secondaryFont: 'Oleo', Copperplate, Papyrus, fantasy;
+
+$primaryClr:  #393E46;
+$secondaryClr: #0C497E;
+$secondaryClrLight: #0D6ABA;
+$secondaryClrLighter: #0E8FFF;
+@font-face {
+    font-family: "BioRhyme";
+    src: 
+    local("BioRhyme"),
+    url("./fonts/BioRhyme-Bold.ttf");
+    font-weight: bold;
+}
+@font-face {
+    font-family: "BioRhyme";
+    src: 
+    local("BioRhyme"),
+    url("./fonts/BioRhyme-ExtraBold.ttf");
+    font-weight: bolder;
+}
+@font-face {
+    font-family: "Heebo";
+    src: 
+    local("Heebo"),
+    url("./fonts/Heebo-VariableFont_wght.ttf");
+}
+@font-face {
+    font-family: "Oleo";
+    src: 
+    local("OleoScriptSwashCaps-Bold"),
+    url("./fonts/OleoScriptSwashCaps-Bold.ttf");
+}
+body {
+    :is(h1,h2,h3,h4,h5,h6) {
+        &:not(.h2__specialHeader) {
+            font-family: $primaryFont;
+            color: $primaryClr;
+        }
+        &.h2__specialHeader {
+            font-family: "Oleo";
+            color: $secondaryClr;
+        }
+    }
+}
+body {
+    background-color: #EEEEEE;
+}
+main {
+    overflow-x: hidden;
+}
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Lato", sans-serif;
+}

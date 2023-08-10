@@ -3,7 +3,7 @@ import Introduction from "../components/Introduction/Introduction.jsx";
 import { Project } from "../components/Project/Project.jsx";
 import Footer from "../components/Footer/Footer.astro";
 
-import "../styles/global.css";
+import "../styles/global.scss";
 
 /* Project 2 */
 import projectimg2 from "../assets/AmazonCloneMockup.png";
@@ -46,54 +46,36 @@ import projectimg4 from "../assets/Spline3DMockup.png";
     <body>
         <main>
             <Introduction client:load />
-            <div class="projects">
-
-                <Project
-                    projectImage={projectimg2}
-                    title={title2}
-                    description={description2}
-                    projectLink={projectLink2}
-                    client:visible
-                />
-                <Project
-                    projectImage={projectimg3}
-                    title={title3}
-                    description={description3}
-                    projectLink={projectLink3}
-                    client:visible
-                />
-                <Project
-                    projectImage={projectimg4}
-                    title={title4}
-                    description={description4}
-                    projectLink={projectLink4}
-                    client:visible
-                />
-            </section>
+            <ul class="projects">
+                <li>
+                    <Project
+                        projectImage={projectimg2}
+                        title={title2}
+                        description={description2}
+                        projectLink={projectLink2}
+                        client:visible
+                    />                  
+                </li>
+                <li>
+                    <Project
+                        projectImage={projectimg3}
+                        title={title3}
+                        description={description3}
+                        projectLink={projectLink3}
+                        client:visible
+                    />                
+                </li>
+                <li>
+                    <Project
+                        projectImage={projectimg4}
+                        title={title4}
+                        description={description4}
+                        projectLink={projectLink4}
+                        client:visible
+                    />             
+                </li>
+            </ul>
             <Footer />
         </main>
     </body>
-
-    <style>
-        body {
-            background-color: black;
-        }
-        main {
-            overflow-x: hidden;
-        }
-        * {
-            padding: 0;
-            margin: 0;
-            font-family: "Lato", sans-serif;
-        }
-        h1 {
-            font-size: 10vw;
-            color: darkgrey;
-            padding-left: 1.5rem;
-        }
-
-        header {
-            font-weight: 900;
-        }
-    </style>
 </html>

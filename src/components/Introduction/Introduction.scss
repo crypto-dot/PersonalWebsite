@@ -1,0 +1,41 @@
+@use "../../styles/global.scss" as *;
+.nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 29.86vw;
+    padding-top: 2.0625rem;
+    margin-bottom: 2.125rem;
+    * {
+        font-family: $primaryFont;
+        color: $primaryClr;
+        text-decoration: none;
+        * {
+            font-family: $primaryFont;
+            color: $primaryClr;
+            text-decoration: none;
+        }
+    }
+    .h2__name {
+        font-size: 1.5625rem;
+        line-height: 90%;
+        letter-spacing: -.0469rem;
+        max-width: 6.625rem;
+    }
+    .button__mobile {
+        background-color: transparent;
+        padding: 0;
+        border: none;
+    }
+    .ul__nav {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+    .heading__Main {
+        .h1 {
+            font-size: 10.8vw;
+        }
+    }
+}
