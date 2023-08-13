@@ -1,9 +1,8 @@
 @use "../../styles/global.scss" as *;
 .nav {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    gap: 29.86vw;
     padding-top: 2.0625rem;
     margin-bottom: 2.125rem;
     * {
@@ -21,21 +20,136 @@
         line-height: 90%;
         letter-spacing: -.0469rem;
         max-width: 6.625rem;
+
+        @media screen and (min-width:350px) {
+            max-width: 7rem;
+        }
+        @media screen and (min-width:450px) {
+            max-width: 8rem;
+        }
+    
     }
-    .button__mobile {
+    .button__mobile,.button__mobileClone {
         background-color: transparent;
         padding: 0;
         border: none;
+        svg {
+            overflow: visible;
+        }
+        .line {
+            transform-origin: center;
+            animation-duration: 1s;
+            animation-timing-function: ease;
+            animation-fill-mode: forwards;
+        }
+        .line__bottom--active {
+            animation-name: animatedSvgBottom;
+        }
+        .line__bottom--deactive {
+            animation-name:  animatedSvgBottomBackwards;
+        }
+        .line__top--deactive {
+            animation-name:  animatedSvgTopBackwards;
+        }
+        .line__top--active {
+            animation-name:  animatedSvgTop;
+        }
     }
+    @keyframes animatedSvgBottom{
+        0% {
+            transform: translateY(0px) translateX(0px) rotate(0deg);
+        }
+        50% {
+            transform: translateY(-6px) translateX(0px) rotate(0deg);
+        }
+        75% {
+            transform: translateY(-6px) translateX(-5px) rotate(0deg);
+        }
+        100% {
+            transform: translateY(-3px) translateX(-5px) rotate(-45deg);
+        }
+    }
+    @keyframes animatedSvgBottomBackwards{
+        100% {
+            transform: translateY(0px) translateX(0px) rotate(0deg);
+        }
+        75% {
+            transform: translateY(-6px) translateX(0px) rotate(0deg);
+        }
+        50% {
+            transform: translateY(-6px) translateX(-5px) rotate(0deg);
+        }
+        0% {
+            transform: translateY(-3px) translateX(-5px) rotate(-45deg);
+        }
+    }
+    @keyframes animatedSvgTop{
+        0% {
+            transform: translateY(0px) translateX(0px) rotate(0deg);
+        }
+        50% {
+            transform: translateY(6px) translateX(0px) rotate(0deg);
+        }
+        75% {
+            transform: translateY(6px) translateX(-5px) rotate(0deg);
+        }
+        100% {
+            transform: translateY(6px) translateX(-5px) rotate(45deg);
+        }
+    }
+    @keyframes animatedSvgTopBackwards{
+        100% {
+            transform: translateY(0px) translateX(0px) rotate(0deg);
+        }
+        75% {
+            transform: translateY(6px) translateX(0px) rotate(0deg);
+        }
+        50% {
+            transform: translateY(6px) translateX(-5px) rotate(0deg);
+        }
+        0% {
+            transform: translateY(6px) translateX(-5px) rotate(45deg);
+        }
+     }
+     .dialog__main {
+        background-color: transparent;
+        border: none;
+        margin-top: 2rem;
+        padding-left: 16vw;
+        position: relative;
+        width: 400px;
+        &::backdrop {
+            background-color: #ffffff8c;
+            backdrop-filter: blur(10px);
+        }
+        .button__mobileClone {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+     }
     .ul__nav {
         list-style: none;
         display: flex;
         flex-direction: column;
         gap: 24px;
     }
-    .heading__Main {
-        .h1 {
-            font-size: 10.8vw;
-        }
+}
+.heading__Main {
+    .h1 {
+        font-size: 21.5vw;
+        line-height: 85%;
+        letter-spacing: -.35vw;
+    }
+    .h2__animate {
+        text-align: center;
+        font-family: $secondaryFont;
+        font-size: 8vw;
+        line-height: 90%;
+        font-weight: 800;
+        background: linear-gradient(90deg, #0C497E 0%, rgba(13, 106, 186, 0.75) 53.13%, rgba(14, 143, 255, 0.46) 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
 }

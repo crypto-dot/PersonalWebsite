@@ -1,9 +1,9 @@
 import React from 'react';
 
-function AnimatedStars() {
+function AnimatedStarsText() {
   return (
     <div>AnimatedStars</div>
   )
 }
 
-export default AnimatedStars;
+export default AnimatedStarsText;
