@@ -1,11 +1,11 @@
 @use "../../styles/global.scss" as *;
 .heading__Main {
-    .h2__large {
+    .h1__large {
         font-size: 21.5vw;
         line-height: 85%;
         letter-spacing: -0.35vw;
     }
-    .h3__animate {
+    .h2__animate {
         text-align: center;
         font-family: $secondaryFont;
         font-size: 8vw;
@@ -33,17 +33,21 @@
                 text-decoration: none;
             }
         }
-        .h1__name {
+        .a__name {
             font-size: 1.5625rem;
             line-height: 90%;
             letter-spacing: -0.0469rem;
             max-width: 6.625rem;
 
-            @media screen and (min-width: 350px) {
+            @media screen and (min-width: 21.875em) {
                 max-width: 7rem;
             }
-            @media screen and (min-width: 450px) {
+            @media screen and (min-width: 28.125em) {
                 max-width: 8rem;
+            }
+
+            @media screen and (min-width: $medium) {
+                display: none;
             }
         }
         .button__mobile,
@@ -51,6 +55,9 @@
             background-color: transparent;
             padding: 0;
             border: none;
+            @media screen and (min-width: $medium) {
+                display: none;
+            }
             svg {
                 overflow: visible;
             }
@@ -145,11 +152,20 @@
                 top: 10px;
             }
         }
-        .ul__nav {
+        .ul__nav, .ul__nav--hidden,.ul__navIcons--hidden {
             list-style: none;
+        }
+        .ul__nav {
             display: flex;
             flex-direction: column;
             gap: 24px;
+        }
+        .ul__nav--hidden, .ul__navIcons--hidden {
+            display: none;
+
+            @media screen and (min-width: $medium) {
+                display: flex;
+            }
         }
     }
 }
